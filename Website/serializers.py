@@ -7,7 +7,8 @@ class MeetingSerializer(ModelSerializer):
         model = Meeting
         fields = ['title', 'description', 'time']
 
+
 class DocumentSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Document
-        fields = ['title', 'file']
+        fields = ['title', 'id']
