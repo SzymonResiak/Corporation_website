@@ -9,3 +9,11 @@ class Meeting(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Document(models.Model):
+    file = models.FileField(upload_to='DocsFiles')
+    title = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.title
