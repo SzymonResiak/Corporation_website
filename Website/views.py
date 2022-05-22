@@ -1,4 +1,12 @@
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import Meeting
+from .serializers import MeetingSerializer
+from rest_framework.permissions import IsAuthenticated
 
-def home(request):
-    return HttpResponse("Hello, Djangon !")
+
+class MeetingViewSet(viewsets.ReadOnlyModelViewSet):
+    def get_queryset(self):
+        user = self.request.user
+        return Meeting.objects.filter(members=user)
+    serializer_class = MeetingSerializer
+    permission_classes = [IsAuthenticated]
