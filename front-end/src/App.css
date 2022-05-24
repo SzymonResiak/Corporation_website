@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-base\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-buttons\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-calendars\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-dropdowns\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-inputs\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-lists\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-navigations\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-popups\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-splitbuttons\styles\material.css);
+@import url(d:\Zlecenia\front-end\node_modules\@syncfusion\ej2-react-schedule\styles\material.css);
+:root {
+  --clr-primary: #f4f4f4;
+  --clr-secondary: #46b63b;
+  --clr-tetriary: rgb(71, 152, 219);
+  --clr-font: rgba(102, 102, 102, 0);
+  --transition: all 0.2s linear;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+}
+
+input {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Roboto", "Lato", sans-serif;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+}
+
+.navbar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 0.4rem 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 0.4rem 0px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .navbar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .navbar-container .btn-logout {
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--clr-tetriary);
+  border-radius: 0.4rem;
+  color: var(--clr-primary);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.navbar .navbar-container .btn-logout:hover {
+  background-color: #1b72b9;
+}
+
+.navbar .logo-login-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .logo-login-wrapper img {
+  margin-right: 1rem;
+}
+
+.navbar .logo-login-wrapper p {
+  font-family: "Lato", sans-serif;
+  color: var(--clr-secondary);
+  font-weight: 500;
+}
+
+.navbar .logo-login-wrapper .username {
+  font-weight: 600;
+}
+
+.navbar .links-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.navbar .links-wrapper ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.navbar .links-wrapper ul li {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  color: var(--clr-tetriary);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.navbar .links-wrapper ul li:hover {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  border-bottom: 2px solid var(--clr-secondary);
+}
+
+.navbar .links-wrapper ul li a {
+  color: var(--clr-tetriary);
+}
+
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.form-container::before {
+  content: "";
+  background-image: url(./assets/group-chat.png);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 1;
+}
+
+.form-container h1 {
+  color: var(--clr-tetriary);
+  margin-bottom: 5rem;
+  font-size: 2.7rem;
+  font-weight: 600;
+  font-family: "Lato";
+}
+
+.form-container .form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  max-width: 30rem;
+  padding: 3rem 1rem 7rem 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 0.2rem 1.4rem 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0.2rem 1.4rem 0 rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.form-container .form-wrapper form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3rem;
+}
+
+.form-container .form-wrapper form h2 {
+  padding: 1rem 0;
+}
+
+.form-container .form-wrapper form input,
+.form-container .form-wrapper form button {
+  width: 90%;
+  border-radius: 0.2rem;
+}
+
+.form-container .form-wrapper form .input-login {
+  font-size: 1.2rem;
+  letter-spacing: 0.08rem;
+  padding: 0.6rem;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  outline: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.form-container .form-wrapper form .input-login:focus {
+  outline: 1px solid #43a6f8;
+  -webkit-box-shadow: 0px 0px 0.6rem rgba(67, 166, 248, 0.8);
+          box-shadow: 0px 0px 0.6rem rgba(67, 166, 248, 0.8);
+}
+
+.form-container .form-wrapper form .btn-login {
+  font-weight: 600;
+  background-color: var(--clr-tetriary);
+  color: white;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  margin-bottom: 1.2rem;
+}
+
+.form-container .form-wrapper form .btn-login:hover {
+  -webkit-box-shadow: 0px 0px 0.6rem 0 #46b63b;
+          box-shadow: 0px 0px 0.6rem 0 #46b63b;
+  background-color: #3a7eb6;
+}
+
+.form-container .form-wrapper form hr {
+  height: 1px;
+  background-color: black;
+  outline: none;
+  border: none;
+  border-bottom: 1.2rem;
+  width: 90%;
+}
+
+.form-container .form-wrapper form a {
+  background-color: var(--clr-secondary);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 90%;
+  border-radius: 0.2rem;
+  text-align: center;
+}
+
+.form-container .form-wrapper form a:hover {
+  background-color: #56da4a;
+  -webkit-box-shadow: 0px 0px 0.8rem 0px var(--clr-tetriary);
+          box-shadow: 0px 0px 0.8rem 0px var(--clr-tetriary);
+}
+
+.dashboard-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3rem 1rem 1rem 1rem;
+}
+
+.dashboard-container h2 {
+  text-align: center;
+}
+
+.dashboard-container .dashboard-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.dashboard-container .dashboard-section .dashboard-download,
+.dashboard-container .dashboard-section .dashboard-news {
+  border-radius: 0.4rem;
+  padding: 2rem;
+  width: 50%;
+  -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.4);
+}
+/*# sourceMappingURL=App.css.map */

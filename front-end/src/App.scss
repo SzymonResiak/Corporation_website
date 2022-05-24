@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+// Scheduler
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-calendars/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-lists/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-react-schedule/styles/material.css";
+
+:root {
+  --clr-primary: #f4f4f4;
+  --clr-secondary: #46b63b;
+  --clr-tetriary: rgb(71, 152, 219);
+  --clr-font: rgba(102, 102, 102, 0);
+
+  --transition: all 0.2s linear;
+
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+input {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.App {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  font-family: "Roboto", "Lato", sans-serif;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0px 0px 0.4rem 0px rgba(0, 0, 0, 0.3);
+  .navbar-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .btn-logout {
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      background-color: var(--clr-tetriary);
+      border-radius: 0.4rem;
+      color: var(--clr-primary);
+      transition: var(--transition);
+      &:hover {
+        background-color: rgb(27, 114, 185);
+      }
+    }
+  }
+  .logo-login-wrapper {
+    display: flex;
+    img {
+      margin-right: 1rem;
+      width: 2rem;
+    }
+    p {
+      font-family: "Lato", sans-serif;
+      color: var(--clr-secondary);
+      font-weight: 500;
+    }
+    .username {
+      font-weight: 600;
+    }
+  }
+  .links-wrapper {
+    display: flex;
+    gap: 0.4rem;
+    ul {
+      display: flex;
+      gap: 0.8rem;
+      li {
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.5rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        color: var(--clr-tetriary);
+        transition: var(--transition);
+        cursor: pointer;
+        &:hover {
+          transform: translateY(5px);
+          border-bottom: 2px solid var(--clr-secondary);
+        }
+        a {
+          color: var(--clr-tetriary);
+        }
+      }
+    }
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  &::before {
+    content: "";
+    background-image: url(./assets/group-chat.png);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1;
+    opacity: 1;
+  }
+  h1 {
+    color: var(--clr-tetriary);
+    margin-bottom: 5rem;
+    font-size: 2.7rem;
+    font-weight: 600;
+    font-family: "Lato";
+  }
+  .form-wrapper {
+    display: flex;
+    width: 60%;
+    max-width: 30rem;
+    padding: 2.6rem 1rem 5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0.2rem 1.4rem 0 rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.95);
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.3rem;
+      h2 {
+        padding: 1rem 0;
+      }
+      input,
+      button {
+        width: 90%;
+        border-radius: 0.2rem;
+      }
+      .input-login {
+        font-size: 1.2rem;
+        letter-spacing: 0.08rem;
+        padding: 0.6rem;
+        transition: var(--transition);
+        outline: 1px solid rgba(0, 0, 0, 0.6);
+        &:focus {
+          outline: 1px solid rgb(67, 166, 248);
+          box-shadow: 0px 0px 0.6rem rgba(67, 166, 248, 0.8);
+        }
+      }
+      .btn-login {
+        font-weight: 600;
+        background-color: var(--clr-tetriary);
+        color: white;
+        transition: var(--transition);
+        margin-bottom: 1.2rem;
+        &:hover {
+          box-shadow: 0px 0px 0.6rem 0 rgba(70, 182, 59, 1);
+          background-color: rgb(58, 126, 182);
+        }
+      }
+      hr {
+        height: 1px;
+        background-color: rgba(0, 0, 0, 1);
+        outline: none;
+        border: none;
+        border-bottom: 1.2rem;
+        width: 90%;
+      }
+      a {
+        background-color: var(--clr-secondary);
+        transition: var(--transition);
+        padding: 0.7rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        width: 90%;
+        border-radius: 0.2rem;
+        text-align: center;
+        &:hover {
+          background-color: rgb(86, 218, 74);
+          box-shadow: 0px 0px 0.8rem 0px var(--clr-tetriary);
+        }
+      }
+    }
+  }
+}
+
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 3rem 1rem 1rem 1rem;
+  h2 {
+    text-align: center;
+  }
+  .dashboard-section {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    .dashboard-download,
+    .dashboard-news {
+      border-radius: 0.4rem;
+      padding: 2rem;
+      box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.4);
+    }
+    .dashboard-news {
+      width: 70%;
+    }
+    .dashboard-download {
+      width: 30%;
+    }
+  }
+}
+
+// media queries
+@media screen and (max-width: 690px) {
+  .form-container {
+    &::before {
+      content: "";
+      background-image: url(./assets/chat-medium.png);
+    }
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 3rem;
+    }
+    .form-wrapper {
+      width: 85%;
+      padding: 2rem 1rem 3rem 1rem;
+      form {
+        h2 {
+          padding: 0.5rem 0;
+        }
+        .btn-login {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .form-container {
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 3rem;
+    }
+    .form-wrapper {
+      width: 90%;
+      padding: 1rem 1rem 2rem 1rem;
+      form {
+        h2 {
+          padding: 0.5rem 0;
+        }
+        .btn-login {
+          margin-bottom: 0.6rem;
+        }
+      }
+    }
+  }
+}
