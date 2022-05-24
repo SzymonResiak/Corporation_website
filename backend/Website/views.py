@@ -10,6 +10,7 @@ from django.http import FileResponse
 class MeetingViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         user = self.request.user
+        #ustawic self.request.user - ustawic taka wartosc dla user po podlaczeniu api
         return Meeting.objects.filter(members=user)
 
     serializer_class = MeetingSerializer
