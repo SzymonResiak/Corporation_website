@@ -6,15 +6,13 @@ const Navbar = ({ setLogoutUser }) => {
     <header className="navbar">
       <nav className="navbar-container">
         <div className="logo-login-wrapper">
-          <li>
-            <Link to="/">
-              <img
-                src={require("../assets/react-icon.png")}
-                alt="company logo"
-                className="logo"
-              />
-            </Link>
-          </li>
+          <Link to="/">
+            <img
+              src={require("../assets/react-icon.png")}
+              alt="company logo"
+              className="logo"
+            />
+          </Link>
 
           <p>
             Welcome <span className="username">username</span>
@@ -22,25 +20,29 @@ const Navbar = ({ setLogoutUser }) => {
         </div>
         <div className="links-wrapper">
           <ul>
-            <li>
-              <Link to="/">Dashboard</Link>
-            </li>
+            <Link to="/">
+              <li>Dashboard</li>
+            </Link>
+
             <li>notSet</li>
-            <li>
-              <Link to="/Meetings">Schedule</Link>
-            </li>
+
+            <Link to="/Meetings">
+              <li>Schedule</li>
+            </Link>
           </ul>
         </div>
         <div>
-          <button
-            type="button"
-            className="btn btn-logout"
-            onClick={() => {
-              setLogoutUser(false);
-            }}
-          >
-            Logout
-          </button>
+          <Link to="/">
+            <button
+              type="button"
+              className="btn btn-logout"
+              onClick={() => {
+                setLogoutUser(false);
+              }}
+            >
+              Logout
+            </button>
+          </Link>
         </div>
       </nav>
     </header>
