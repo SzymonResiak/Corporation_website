@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/AuthProvider";
 
 const Navbar = ({ setLogoutUser }) => {
+  const { auth } = useContext(AuthContext);
+
   return (
     <header className="navbar">
       <nav className="navbar-container">
@@ -15,7 +18,7 @@ const Navbar = ({ setLogoutUser }) => {
           </Link>
 
           <p>
-            Welcome <span className="username">username</span>
+            Welcome <span className="username">{auth.username}</span>
           </p>
         </div>
         <div className="links-wrapper">

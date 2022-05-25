@@ -28,11 +28,8 @@ const LogIn = ({ setLoginUser }) => {
           withCredentials: true,
         }
       );
-      console.log(JSON.stringify(response?.data));
-      console.log(JSON.stringify(response));
-
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
+      const accessToken = response?.data?.access;
+      const roles = response?.roles;
       setAuth({ username, password, roles, accessToken });
       setUsername("");
       setPassword("");
@@ -44,6 +41,8 @@ const LogIn = ({ setLoginUser }) => {
         setErrMsg("No Server Response");
       } else if (err.response?.status === 400) {
         setErrMsg("Missing Username or Password");
+      } else if (err.response?.status === 403) {
+        setErrMsg("Wrong Login or Password");
       } else if (err.resposne?.status === 401) {
         setErrMsg("Unauthorized");
       } else {

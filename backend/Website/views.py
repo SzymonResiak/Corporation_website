@@ -20,7 +20,6 @@ class MeetingViewSet(viewsets.ReadOnlyModelViewSet):
 class DocumentViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
-    permission_classes = [IsAuthenticated]
 
     def retrieve(self, request, pk):
         document = get_object_or_404(Document, id=pk)
