@@ -38,6 +38,8 @@ const Meetings = () => {
     }
   };
 
+  console.log(meetingsData);
+
   useEffect(() => {
     fetchDownloadFilesData();
   }, []);
