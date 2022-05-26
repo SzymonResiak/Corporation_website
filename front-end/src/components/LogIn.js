@@ -2,14 +2,14 @@ import { useState, useRef, useEffect, useContext } from "react";
 import AuthContext from "../context/AuthProvider";
 
 import axios from "./api/axios";
-const LOGIN_URL = "api/token/";
+const LOGIN_URL = "http://127.0.0.1:8000/api/token/";
 
 const LogIn = ({ setLoginUser }) => {
   const { setAuth } = useContext(AuthContext);
   const errRef = useRef();
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
   const [errMsg, setErrMsg] = useState();
 
   useEffect(() => {
@@ -18,7 +18,6 @@ const LogIn = ({ setLoginUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post(
         LOGIN_URL,
