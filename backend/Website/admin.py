@@ -5,7 +5,7 @@ from .models import Meeting, Document
 @admin.register(Meeting)
 class MetingAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description')
-    list_display = ('title', 'time')
+    list_display = ('title', 'time_start')
 
 
 @admin.register(Document)

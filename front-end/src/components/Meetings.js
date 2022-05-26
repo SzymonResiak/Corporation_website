@@ -45,30 +45,30 @@ const Meetings = () => {
   }, []);
 
   // fetching meetings time from api
-  // const schedulerData = [
-  //   meetingsData.map((element) => {
-  //     return {
-  //       startDate: element.time.slice(0, 16),
-  //       endDate: "2022-05-22T22:00",
-  //       title: element.title,
-  //     };
-  //   }),
-  // ];
-
   const schedulerData = [
-    {
-      startDate: "2022-05-22T20:00",
-      endDate: "2022-05-22T22:00",
-      title: "Tst",
-    },
-    {
-      startDate: "2022-05-25T18:39",
-      endDate: "2022-05-25T20:39",
-      title: "Test Meeting",
-    },
+    meetingsData.map((element) => {
+      return {
+        startDate: element.time_start.slice(0, 16),
+        endDate: element.time_end.slice(0, 16),
+        title: element.title,
+      };
+    }),
   ];
 
-  // console.log(schedulerData);
+  // const schedulerData = [
+  //   {
+  //     startDate: "2022-05-22T20:00",
+  //     endDate: "2022-05-22T22:00",
+  //     title: "Tst",
+  //   },
+  //   {
+  //     startDate: "2022-05-25T18:39",
+  //     endDate: "2022-05-25T20:39",
+  //     title: "Test Meeting",
+  //   },
+  // ];
+
+   console.log(schedulerData);
 
   return (
     <section>
@@ -93,3 +93,4 @@ const Meetings = () => {
 };
 
 export default Meetings;
+// stop

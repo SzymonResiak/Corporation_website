@@ -5,7 +5,7 @@ from .models import Meeting, Document
 class MeetingSerializer(ModelSerializer):
     class Meta:
         model = Meeting
-        fields = ['title', 'description', 'time']
+        fields = ['title', 'description', 'time_start', 'time_end']
 
 
 class DocumentSerializer(HyperlinkedModelSerializer):
